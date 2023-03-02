@@ -1,8 +1,11 @@
 package Archivos;
 
 import java.io.File;
+import java.nio.file.Files;
+import java.nio.file.Path;
 
-public static boolean crearFichero(String carpeta, String nombre) {
+public class CrearArchivos {
+	public static boolean crearFichero(String carpeta, String nombre) {
 		try {
 			Path archivo=Path.of(carpeta, nombre);
 			int cont=1;
@@ -15,5 +18,6 @@ public static boolean crearFichero(String carpeta, String nombre) {
 			return true;
 		}catch(Exception ex) {
 			return false;
-        }
-      }
+		}
+	}
+}
