@@ -1,0 +1,19 @@
+package Archivos;
+
+import java.io.File;
+
+public static boolean crearFichero(String carpeta, String nombre) {
+		try {
+			Path archivo=Path.of(carpeta, nombre);
+			int cont=1;
+			while(Files.exists(archivo)) {
+				String[] partes=nombre.split("\\.");
+				archivo=Path.of(carpeta,partes[0]+cont+"."+partes[1]);
+				cont++;
+			}
+			Files.createFile(archivo);
+			return true;
+		}catch(Exception ex) {
+			return false;
+        }
+      }
